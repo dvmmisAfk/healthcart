@@ -16,26 +16,26 @@ export default function Cart({ onClose }: CartProps) {
   const getCartItemImage = (name: string) => {
     const n = name.toLowerCase();
 
-    if (n.includes('vicks')) return '/vicks.jpg';
+    if (n.includes('vicks')) return '/viks.jpg';
     if (n.includes('moov')) return '/moov.jpg';
-    if (n.includes('volini')) return '/volini.jpeg';
+    if (n.includes('volini')) return '/volini.jpg';
 
     if (n.includes('stethoscope')) return '/sethoscope.png';
     if (n.includes('scissors')) return '/scissor.png';
-    if (n.includes('forceps')) return '/forcep.jpeg';
-    if (n.includes('scalpel')) return '/scalpel.jpeg';
+    if (n.includes('forceps')) return '/forcep.jpg';
+    if (n.includes('scalpel')) return '/scalpel.jpg';
 
     if (n.includes('bp')) return '/bpmachine.jpg';
     if (n.includes('thermometer')) return '/thermometer.jpg';
     if (n.includes('oximeter')) return '/oximeter.jpg';
 
     if (n.includes('walker')) return '/walker.jpg';
-    if (n.includes('crutch')) return '/crutch.jpg';
+    if (n.includes('crutch')) return '/crutch.jpeg';
     if (n.includes('wheelchair')) return '/wheelchair.jpg';
 
     if (n.includes('knee')) return '/kneebrace.jpg';
     if (n.includes('elbow')) return '/elbowsupport.jpg';
-    if (n.includes('wrist')) return '/wristsupport.jpg';
+    if (n.includes('wrist')) return '/wristsupport.png';
     if (n.includes('back')) return '/backsupport.jpg';
     if (n.includes('neck')) return '/neckcollar.jpg';
 
