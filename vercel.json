@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "X-SearchOps-Sha",
-          "value": "@vercel-git-commit-sha"
+          "value": "4c0ea254fa1ab378952012ad7a9985277affac92"
         }
       ]
     }
