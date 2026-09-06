@@ -1,4 +1,5 @@
-import { writeFileSync } from "node:fs";
+import { writeFileSync, mkdirSync } from "node:fs";
+import { dirname } from "node:path";
 
 const sha =
   process.env.VERCEL_GIT_COMMIT_SHA ||
@@ -6,19 +7,21 @@ const sha =
   process.env.COMMIT_SHA ||
   "local-dev";
 
-writeFileSync(
-  "vercel.json",
-  JSON.stringify(
+const config = {
+  headers: [
     {
-      headers: [
-        {
-          source: "/(.*)",
-          headers: [{ key: "X-SearchOps-Sha", value: sha }],
-        },
-      ],
+      source: "/(.*)",
+      headers: [{ key: "X-SearchOps-Sha", value: sha }],
     },
-    null,
-    2,
-  ) + "\n",
-);
+  ],
+};
+
+const json = JSON.stringify(config, null, 2) + "\n";
+writeFileSync("vercel.json", json);
+try {
+  mkdirSync("dist", { recursive: true });
+  writeFileSync("dist/vercel.json", json);
+} catch {
+  // dist may not exist during pre-build; post-build script copies again
+}
 console.info("SearchOps revision marker written:", sha.slice(0, 7));

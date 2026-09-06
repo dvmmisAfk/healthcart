@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://healthcart-bice.vercel.app/sitemap.xml
