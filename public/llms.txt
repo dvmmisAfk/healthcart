@@ -1,0 +1,5 @@
+# Site
+> Discoverability summary for AI crawlers and answer engines.
+
+## Pages
+- [Home](https://healthcart-bice.vercel.app/): Primary landing page
